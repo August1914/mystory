@@ -6,38 +6,46 @@
     .active{
         display: block;
     }
-</style>
+    .diagonal-box {
+ 	position: relative;
+}
+
+.hero-image__figure img {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}</style>
 
 
 
 <header>
-<div class="z-0 mx-auto mb-10 h-96" style="background-image: url('{{ $webp }}'), url('{{ $jpg }}'); background-position: center; background-size: cover;"> 
-<div class="z-50 p-5 mx-auto bg-blue-900 bg-opacity-70">
-  <nav class="flex-row md:justify-between">
-    <div class="float-left w-10 mr-5">
-    <a class="" href="/"><img class="transform hover:rotate-12" src="{{ "/img/logo.svg" | absURL }}" alt="{{ .Site.Title }}" /></a>
-    </div>
-    <ul class="hidden md:flex md:flex-row" id="mobileMenu">
-      {{- range .Site.Menus.main }}
-        <li><a  class="pr-5 font-medium text-white topnav hover:text-yellow-200" href="{{ .URL }}">{{ .Name }}</a></li>
-      {{- end }}
-      {{- range .Site.Menus.social }}
-        <li><a  class="m-2 text-white hover:text-yellow-200 " href="{{ .URL }}" aria-label="{{ .Name }}"><i class="{{  .Title }}" aria-hidden="true" title="{{ .Name }}"></i></a></li>
-      {{- end }}
-    </ul>
-    <p id="hamburgerbtn" class="text-white md:hidden ">
-      <i class="fa fa-bars"></i>
-    </p>
-  </nav>
-</div>
-<div class="">
-  <h1 class="ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide text-yellow-400 transform hover:text-yellow-400 font-title">{{ .Site.Title }}</h1>
-  <h2 class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl transform hover:text-yellow-400">{{ .Site.Params.tagline }}</h2>
-  <div class="float-right w-10 mr-5">
-  <a class="z-50" href="{{ .Site.Params.video }}"><img class="transform hover:scale-125 absolute top-32 right-96 h-32 w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" /></a>
+  
+<div class="z-0 mx-auto mb-10 h-96 " style="background-image: url('{{ $webp }}'), url('{{ $jpg }}'); background-position: center; background-size: cover;"> 
+  <div class="p-5 mx-auto bg-blue-900 bg-opacity-70">
+    <nav class="flex-row md:justify-between">
+      <div class="float-left w-10 mr-5">
+      <a class="" href="/"><img class="transform hover:rotate-12" src="{{ "/img/logo.svg" | absURL }}" alt="{{ .Site.Title }}" /></a>
+      </div>
+      <ul class="hidden md:flex md:flex-row" id="mobileMenu">
+        {{- range .Site.Menus.main }}
+          <li><a  class="pr-5 font-medium text-white topnav hover:text-yellow-200" href="{{ .URL }}">{{ .Name }}</a></li>
+        {{- end }}
+        {{- range .Site.Menus.social }}
+          <li><a  class="m-2 text-white hover:text-yellow-200 " href="{{ .URL }}" aria-label="{{ .Name }}"><i class="{{  .Title }}" aria-hidden="true" title="{{ .Name }}"></i></a></li>
+        {{- end }}
+      </ul>
+      <p id="hamburgerbtn" class="text-white md:hidden ">
+        <i class="fa fa-bars"></i>
+      </p>
+    </nav>
   </div>
-</div>
-</div>
+    <div class="">
+      <h1 class="ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide text-yellow-400 transform hover:text-yellow-400 font-title">{{ .Site.Title }}</h1>
+      <h2 class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl transform hover:text-yellow-400">{{ .Site.Params.tagline }}</h2>
+      <div class="float-right w-10 mr-5">
+      <a class="" href="{{ .Site.Params.video }}"><img class="transform hover:scale-125 absolute top-32 right-96 h-32 w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" /></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 </header>
