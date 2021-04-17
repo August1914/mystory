@@ -1,0 +1,18 @@
+<div class="w-full overflow-hidden md:w-1/3 md:my-2 md:px-2">
+  {{ $img := .Params.thumbnail  }}
+  {{ $alt := .Title }}
+  {{ $caption := .Params.skill }}
+
+  <picture>
+   <source srcset="/img/webp/sm/{{ $img }}.webp 600w,
+                  /img/webp/{{ $img }}.webp" type="image/webp">
+   <source srcset="/img/jpg/sm/{{ $img }}.jpg 600w,
+                  /img/jpg/{{ $img }}.jpg" type="image/jpeg">
+ <img class="w-3/5 mx-auto transform rounded-lg shadow-md hover:scale-125"
+   src="/img/jpg/{{ $img }}.jpg" alt="{{ $alt }}">
+   <div class="w=full mt-2 text-center uppercase font-sans text-normal rounded bg-white text-gray-800 position relative ">{{ $caption }}</div>
+ </picture>
+  <div class="mt-0 text-sm font-normal text-center text-gray-600 uppercase">{{ .Title }}</div>
+  <div class="my-0 text-sm font-normal text-center text-gray-600 uppercase">{{ .Params.affiliation }}</div>
+  <p class="mx-4 mt-2 text-sm text-center text-gray-600">{{ .Summary }}</p>
+</div>

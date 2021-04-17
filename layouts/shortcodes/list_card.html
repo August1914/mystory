@@ -1,0 +1,15 @@
+{{ $s1 := (.Get "s1") }}
+{{ $s2 := (.Get "s2") }}
+{{ $s3 := (.Get "s3") }}
+{{ $s4 := (.Get "s4") }}
+{{ $s5 := (.Get "s5") }}
+{{ $s6 := (.Get "s6") }}
+
+<ul class="bg-gray-700 text-white font-sans py-4">
+    <li class="ml-8">{{ $s1 }}</li>
+    <li class="ml-8">{{ $s2 }}</li>
+    <li class="ml-8">{{ $s3 }}</li>
+    <li class="ml-8">{{ $s4 }}</li>
+    {{ if $s5 }} <li class="ml-8">{{ $s5 }}</li> {{ end }}
+    {{ if $s6 }} <li class="ml-8">{{ $s6 }}</li> {{ end }}
+</ul>

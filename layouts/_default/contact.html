@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="container mx-auto h-auto mb-4">
+    <div class="text-center py-4 text-4xl text-gray-600 uppercase text-base font-bold">Let's Talk</div>
+
+    <hr class="text-gray-700 mx-8 my-2">
+    
+    <div class="flex flex-wrap overflow-hidden mb-4">
+    <div class="mx-4 w-96 pb-8 mt-0 prose prose-lg text-left prose-indigo md:font-serif">
+        {{ .Content }}
+    </div>
+    <div class="ml-8 mt-4 w-96 rounded-lg ">
+        {{ partial "contact_form.html" . }}
+    </div>
+    
+    </div>
+    </div>
+  {{ end }}

@@ -1,0 +1,133 @@
+.form-story{
+	max-width:500px;
+	margin:2px auto;
+	background:#fff;
+	border-radius:2px;
+	padding:2px;
+	font-family: 'Spectral', Georgia, "Times New Roman", Times, serif;
+}
+
+.form-story h1{
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0px 0px 20px 0px;
+	color: #5C5C5C;
+	font-size:x-large;
+}
+.form-story ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.form-story li{
+	display: block;
+	padding: 9px;
+	border:1px solid #dddddd;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+.form-story li:last-child{
+	border:none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.form-story li > label{
+	display: block;
+	float: left;
+	margin-top: -19px;
+	background: #ffffff;
+	height: 14px;
+	padding: 2px 5px 2px 5px;
+	color: black;
+	font-size: 11px;
+	overflow: hidden;
+	font-family: 'Spectral', Arial, Helvetica, sans-serif;
+}
+
+.form-story input[type="text"],
+.form-story input[type="date"],
+.form-story input[type="datetime"],
+.form-story input[type="email"],
+.form-story input[type="number"],
+.form-story input[type="search"],
+.form-story input[type="time"],
+.form-story input[type="url"],
+.form-story input[type="password"],
+.form-story textarea,
+.form-story select 
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.form-storyb select
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 100px;
+	line-height: 100px;
+	font-size: 12px;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-story input[type="text"]:focus,
+.form-story input[type="date"]:focus,
+.form-story input[type="datetime"]:focus,
+.form-story input[type="email"]:focus,
+.form-story input[type="number"]:focus,
+.form-story input[type="search"]:focus,
+.form-story input[type="time"]:focus,
+.form-story input[type="url"]:focus,
+.form-story input[type="password"]:focus,
+.form-story textarea:focus,
+.form-story select:focus
+{
+}
+.form-story li > span{
+	background: #F3F3F3;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.form-text {
+color: red;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.button {
+  border: 1px solid #0066cc;
+  background-color: #0099cc;
+  color: #ffffff;
+	text-align: center;
+}
+
+.form-story-header {
+  text-align: center;
+}

@@ -1,0 +1,10 @@
+{{ $noun := path.Join "/img/icon/" ( .Get "img" ) }}
+{{ $alt := (.Get "img") }}
+{{ $link := (.Get "link") }}
+{{ $float := default "float-left" (.Get "float") }}
+
+{{ if $link }}<a href="{{ $link }}">{{ end }}
+<div>
+<object class="{{ $float }} transform hover:rotate-12 w-14 h-14 ml-8 mr-4 mb-1 mt-2 fill-current text--600" data="{{ $noun }}" type="image/svg+xml"></object>
+</div>
+{{ if $link }}</a>{{ end }}
