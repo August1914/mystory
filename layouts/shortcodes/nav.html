@@ -1,0 +1,12 @@
+{{ $prevcaption := ( .Get "prevcaption" ) }}
+{{ $prevlink := ( .Get "prevlink" ) }}
+{{ $nextcaption := ( .Get "nextcaption" ) }}
+{{ $nextlink := ( .Get "nextlink" ) }}
+
+<p>
+  <div class="py-4 ml-0 text-center">
+    <button class="transform hover:rotate-6"><a style="text-decoration:none;" class="inline-block py-2 w-40 no-underline font-sans text-xs text-blue-500 bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white " href="{{ $prevlink }}"><i class="fas fa-chevron-circle-left"></i><span>  </span>{{ $prevcaption }}</a></button>
+    <button class="pl-2 transform hover:rotate-6"><a style="text-decoration:none;" class="inline-block py-2 w-40 no-underline font-sans text-xs text-blue-500 bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white" href="{{ $nextlink }}">{{ $nextcaption }}<span>  </span><i class="fas fa-chevron-circle-right"></i></a></button> 
+  </div>
+</p>
+   

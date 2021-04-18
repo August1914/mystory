@@ -1,0 +1,16 @@
+{{ $alt := (.Get "alt") }}
+{{ $title := default $alt (.Get "title")}}
+{{ $subtitle := (.Get "subtitle")}}
+{{ $author := (.Get "author") }}
+{{ $isbn := (.Get "isbn") }}
+{{ $link := (.Get "link") }}
+
+<div style="margin-top: 2px;" class="pb-0 mt-0 font-sans text-sm">
+  <span class="mt-0 font-bold"><cite>{{ $title }}</cite></span>
+  {{- if $subtitle -}}
+  <span class="mt-0 text-sm"> — {{ $subtitle }}<span>
+  {{ end }}
+  {{- if $author -}}
+  <span class="mt-0 text-sm"> &nbsp;by {{ $author }}</span>
+  {{ end }}
+</div>
