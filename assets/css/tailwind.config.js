@@ -15,15 +15,7 @@ module.exports = {
       center: true,
       padding: "1.5rem",
     },
-    screens: {
-      'xs': '380px',      
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
-    },
+
     backgroundOpacity: {
      10: '0.1',
      20: '0.2',
@@ -70,6 +62,9 @@ module.exports = {
         116: '32rem',
         132: '36rem',
         148: '40rem',
+      },
+      height: {
+        88: '22rem',
       },
     },
   },
