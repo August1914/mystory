@@ -1,0 +1,6 @@
+{{ $anchor := (.Get "anchor") }}
+{{ $title := default $anchor (.Get "title") }}
+
+
+<div><a class="font-sans text-sm"
+    href="{{ $anchor }}"> {{ $title }}</a></div>

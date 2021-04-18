@@ -1,0 +1,10 @@
+{{ $line1 := (.Get "line1") }}
+{{ $line2 := (.Get "line2") }}
+{{ $line3 := (.Get "line3") }}
+{{ $topbar := (.Get "topbar") }}
+
+{{ if not $topbar }}<hr>{{ end }}
+<div class="ml-10 font-sans font-semibold">{{ $line1 }}</div>
+<div class="ml-10 font-sans italic font-semibold">{{ $line2 }}</div>
+{{ if $line3 }}<div class="ml-10 mr-10 font-sans font-normal">{{ $line3 }}</div>{{ end }}
+<hr>

@@ -1,0 +1,24 @@
+{{ $width := default "auto" (.Get "width") }}
+{{ $img := ( .Get "img" ) }}
+{{ $text := ( .Get "text") }}
+{{ $alt := (.Get "alt") }}
+
+<style>
+  .btncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  }
+</style>
+<div>
+  <a href="/contact">
+  <picture>
+    <source srcset="/img/{{ $img }}.webp" type="image/webp">
+    <source srcset="/img/jpg/{{ $img }}.jpg" type="image/jpeg">
+  <img class="circle" src="/img/jpg/{{ $img }}.jpg" alt="{{ $alt }}" style="width:{{ $width }}; float: left; border-radius: 50px;">
+  </picture>
+  </a>
+  <p>{{ $text }}</p>
+  <button onclick="topFunction()" id="myBtn" class="btncenter ba br3 pa2 link hover:bg-blue-500 hover:text-white" title="Go to top">Back to Top! <i class="fas fa-chevron-circle-up"></i></button>
+</div>
