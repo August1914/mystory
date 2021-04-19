@@ -1,0 +1,14 @@
+<h2>Vue Meets Hugo</h2>
+<div id="vapp">
+  <p>Hello World: [[ display ]]</p>
+</div>
+
+<script>
+const vueApp = new Vue({
+  delimiters: ['[[', ']]'],
+  el: '#vapp',
+  data: {
+   display: 'this is the value of a vue variable'
+  }
+})
+</script>

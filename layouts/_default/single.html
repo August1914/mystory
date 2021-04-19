@@ -3,19 +3,14 @@
 <article class="z-10 w-full my-0 bg-white md:mx-auto md:w-148">
   <div class="relative bg-white md:shadow-xl md:rounded -top-32 sm:-top-40 md:-top-20">
     <div class="bg-gray-700 md:rounded md:shadow-lg">
-      <div>
-        <object class="float-left transform hover:rotate-12 w-14 h-14 ml-8 mr-4 mb-1 mt-2 fill-current text--600" data="{{ .Params.icon }}" type="image/svg+xml"></object>
-        </div>
-    <H3 class="bg-gray-700 text-white font-sans pt-4 text-3xl font-medium text-center">{{ .Page.Title }}</H3>
-    <H4  class="bg-gray-700 text-white font-sans font-normal text-center text-md">{{ .Params.subtitle }}</H4>
+    <H3 class="text-white font-sans pt-4 text-3xl font-medium text-center">{{ .Page.Title }}</H3>
+    <H4  class="text-white font-sans font-normal text-center text-md">{{ .Params.subtitle }}</H4>
     <hr class="mt-4">
     </div>
-    
+
     <div class="mx-4 mt-0 prose prose-lg text-left md:mx-auto prose-indigo md:font-serif">
         <div>
-          <h1>home!</h1>
            {{ .Content }}
-           <h1>home!</h1>
         </div>
     </div>
   </div>
