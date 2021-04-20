@@ -1,0 +1,91 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Your process is your business"
+theme = "mystory"
+
+[params]
+  author = "Yours truely"
+  company = "Acme Widgets"
+  subtitle = "The coyote looses, every time."
+  tagline = "Got anything you want to blow up?"
+  banner = "sergey-pesterev-JV78PVf3gGI-unsplash"
+  logo = "/img/lofo.svg"
+  video = "https://www.youtube.com/watch?v=HRK0GECpQbA"
+  contact = "Contact Us"
+
+[taxonomies]
+  tag = "tags"
+  category = "testimonials"
+  chapter = "services"
+
+[[menu.social]]
+  name = "Twitter"
+  title = "fab fa-twitter-square"
+  url = "https://twitter.com/curtisguilbot/"
+  weight = 6
+
+[[menu.social]]
+  name = "Linkedin"
+  title = "fab fa-linkedin"
+  url = "https://linkedin.com/in/curtiswayneguilbot/"
+  weight = 4
+
+[[menu.main]]
+  name = "About"
+  title = "About"
+  url = "/about/"
+  weight = 90
+
+[[menu.main]]
+  name = "Videos"
+  title = "Insights"
+  url = "https://www.youtube.com/watch?v=HRK0GECpQbA"
+  weight = 3
+
+[[menu.main]]
+  name = "Services"
+  title = "Services"
+  url = "/services/"
+  weight = 5
+
+
+[[menu.main]]
+  name = "Contact"
+  title = "Insights"
+  url = "/contact/"
+  weight = 10
+
+googleAnalytics = "UA-PROPERTY_ID"
+
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = false
+  [privacy.instagram]
+    disable = true
+    simple = false
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.vimeo]
+    disable = true
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = false
+
+[[headers]]
+  for = "/*"
+  [header.values]
+  X-Frame-Options = "DENY"
+  X-XSS-Protection = "1; mode=block"
+  Set-Cookie = '''
+     HttpOnly,
+     Secure,
+     SameSite=Strict'''
