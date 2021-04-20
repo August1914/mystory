@@ -9,7 +9,7 @@ theme = "mystory"
   subtitle = "The coyote looses, every time."
   tagline = "When one teaches, two learn"
   banner = "sergey-pesterev-JV78PVf3gGI-unsplash"
-  logo = "/img/lofo.svg"
+  logo = "/img/logo.svg"
   video = "https://www.youtube.com/watch?v=HRK0GECpQbA"
   contact = "Contact Us"
 

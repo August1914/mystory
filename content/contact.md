@@ -13,12 +13,9 @@ We always like to start with a brief, no-obligation discussion. We prefer a phon
 
 ---
 
-Strategy as Code
-4301 W William Cannon Dr
-Suite B-150, #172
-Austin, TX. 78749
+Your address here
 
 ---
 
-E: curtis@strategyascode.com                         
-P: +1 - 512.632.0124      
+E: your@email.com
+P: +1 333-456-4567      
