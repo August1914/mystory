@@ -6,5 +6,5 @@ url = "/about"
 description = ""
 thumbnail = ""
 tags = []
-layout = ""
+layout = "about"
 +++
