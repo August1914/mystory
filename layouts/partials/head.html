@@ -9,7 +9,7 @@
 {{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
 {{ hugo.Generator }}
 {{ with .Description }}<meta name="description" content="{{ . | markdownify }}">{{ end }}
-
+<link href="https://fonts.googleapis.com/css?family=Anton|Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext&display=swap" rel="stylesheet">
 <!-- Tailwind -->
 {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js")}}
 {{ if .Site.IsServer }}
