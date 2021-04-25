@@ -1,0 +1,5 @@
+{{ $header :=  (.Get 0) }}
+{{ $defanchor := anchorize $header }}
+{{ $anchor :=  default $defanchor (.Get 1) }}
+
+<h4>{{ $header }}</h4>

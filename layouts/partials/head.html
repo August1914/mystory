@@ -5,7 +5,12 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="shortcut icon" type="image/png" href="{{ "apple-touch-icon-precomposed.png" | absURL }}">
 <link rel="stylesheet" href="css/main.css">
+<link defer href="https://fonts.googleapis.com/css?family=Anton|Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext&display=swap" rel="stylesheet">
 <script type="text/javascript" src="{{ "js/cookie-consent.js" | absURL }}"></script>
+{{ if .Site.Params.vue }} 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuex"></script>
+{{ end }}
 {{ with .Keywords }}<meta name="keywords" content="{{.}}">{{ end }}
 {{ hugo.Generator }}
 {{ with .Description }}<meta name="description" content="{{ . | markdownify }}">{{ end }}
@@ -25,7 +30,7 @@
 <script>
   window.onload = function(){
     if(checkCookie(window.cookieName) != window.cookieValue){
-        createDiv(); 
+        createDiv();
     }
 }
 </script>

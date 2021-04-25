@@ -1,0 +1,39 @@
+{{ $name := (.Get "name") }}
+{{ $feature := (.Get "feature") }}
+{{ $img := (.Get "icon") }}
+{{ $text := (.Get "text") }}
+{{ $tagline := (.Get "tagline") }}
+{{ $url := default "/" (.Get "url") }}
+
+<script type="text/javascript" src="{{ "../js/top.js" | absURL }}"></script>
+
+<style>
+  .btncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  }
+  .curve {
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-right:2rem;
+    border-radius: 50%;
+    shape-outside:circle();
+  }
+
+
+</style>
+<div class="mx-auto my-6" style="width:400px;"> 
+  <a href="{{ $url }}">
+  <picture>
+  <img class="float-left transform rounded-full hover:rotate-6 curve" src="{{ $img }}" alt="{{ $name }}" style="float: left; border-radius: 50px;">
+  </picture>
+  </a>
+  <h3 class="font-sans text-lg">{{ $name }}</h3>
+  <p class="font-sans text-base font-semibold">{{ $tagline }}</p>
+  <p class="prose">{{ $text }}</p>
+  
+  <div class="h-4"></div>
+</div>

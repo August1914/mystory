@@ -1,0 +1,18 @@
+{{ $handle := (.Get "handle") }}
+{{ $artist := (.Get "artist") }}
+{{ $subject := (.Get "subject") }}
+
+<p class="photo-credit sans-serif">
+<a class="inline-block font-sans text-xs font-bold text-white bg-black rounded ring-2 hover:bg-indigo-800 hover:text-black"  
+   href="https://unsplash.com/@{{ $handle }}?utm_medium=referral&amp;utm_campaign=artist-credit&amp;utm_content=creditBadge" 
+   target="_blank" rel="noopener noreferrer" 
+   title="Download free do whatever you want high-resolution photos from {{ $artist }} ">
+    <span class="inline-block h-2 p-2" >
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        class="relative w-auto h-3 text-white fill-current" 
+        viewBox="0 0 32 32"><title>unsplash-logo</title>
+        <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span>
+        <span class="inline-block px-3 py-2 text-white" >{{ $artist }}</span>
+</a>
+<span class="font-sans text-sm ">— "{{ $subject}}"</span>
+</p>

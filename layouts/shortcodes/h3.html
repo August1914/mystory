@@ -1,0 +1,6 @@
+{{ $header :=  (.Get 0) }}
+{{ $defanchor := anchorize $header }}
+{{ $anchor :=  default $defanchor (.Get 1) }}
+
+<hr>
+<h3 class="font-sans text-indigo-800">{{ $header }}</h3>
