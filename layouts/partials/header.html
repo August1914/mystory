@@ -1,6 +1,6 @@
 
 {{ $webp := absURL (print "/img/webp/" .Site.Params.banner ".webp") }}
-{{ $jpg := absURL (print "/img/jpg/" .Site.Params.banner ".jpg") }}
+{{ $jpg := absURL (print "/img/jpg/" .Site.Params.banner ".jpg")  }}
 
 <style>
     .active{
@@ -41,9 +41,13 @@
         <a class="" href="{{ .Site.Params.video }}"><img class="transform hover:scale-125 absolute h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
         </a>
       </div>
+      <h1 class="text-white">{{ .Site.Params.titlecolor }} </h1>
+      {{ $titlestyle := print .Site.Params.titlecolor  "  ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide hover:text-yellow-600 font-title" }}
 
-      <h1 class="ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide text-yellow-400 transform hover:text-yellow-600  font-title">{{ .Site.Title }}</h1>
-      <h2 class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl hover:text-yellow-600">{{ .Site.Params.tagline }}</h2>
+      {{ $taglinestyle := print .Site.Params.titlecolor  "  ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide transform hover:text-yellow-600  font-title"  }}
+
+      <h1 style="text-shadow: 2px 2px 4px black;" class="{{ $titlestyle }}">{{ .Site.Title }}</h1>
+      <h2  class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl hover:text-yellow-600">{{ .Site.Params.tagline }}</h2>
     </div>
 </header>
 
