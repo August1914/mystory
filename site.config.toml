@@ -14,6 +14,7 @@ theme = "mystory"
   logo = "/img/logo.svg"
   video = "https://www.youtube.com/watch?v=HRK0GECpQbA"
   contact = "Contact Us"
+  vue = false
 
 [taxonomies]
   tag = "tags"
