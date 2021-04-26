@@ -1,4 +1,4 @@
-{{ $img := ( .Get "img" ) }}
+{{ $img := default .Site.Params.authorimage ( .Get "img" ) }}
 {{ $alt := (.Get "alt") }}
 {{ $caption := default $alt (.Get "caption") }}
 {{ $border := default "0px" (.Get "border") }}
@@ -12,7 +12,7 @@
                    /img/webp/{{ $img }}.webp" type="image/webp">
     <source srcset="/img/jpg/sm/{{ $img }}.jpg 600w,
                    /img/jpg/{{ $img }}.jpg" type="image/jpeg">
-  <img class="w-full m-0 transform rounded-lg shadow-lg hover:scale-125" 
+  <img class="w-full m-0 transform rounded-lg shadow-lg hover:scale-125"
     src="/img/jpg/{{ $img }}.jpg" alt="{{ $alt }}">
     <div class="w=full text-center font-sans text-sm bg-gray-100 text-gray-800 position relative -top-8">{{ $caption }}</div>
   </picture>
