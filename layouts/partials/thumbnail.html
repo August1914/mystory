@@ -1,0 +1,15 @@
+{{ $img := .Params.thumbnail }}
+{{ $alt := "" }}
+{{ $caption := "" }}
+
+{{ $webp := absURL (print "/img/webp/" .Params.thumbnail ".webp") }}
+{{ $jpg := absURL (print "/img/jpg/" .Params.thumbnail ".jpg") }}
+<div class="rounded-lg h-44 md:h-72 br-3"
+     style="background-size: cover; background-position: center;
+            background-image: url('{{ $webp }}'), url('{{ $jpg }}')">
+</div>
+
+  {{- if $caption -}}
+  <p class="">{{ $caption }}</p>
+  {{ end }}
+</dev>

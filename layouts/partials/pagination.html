@@ -1,0 +1,9 @@
+<div>
+	{{ if .Paginator.HasPrev }}
+		   <a class="text-blue-600 underline hover:text-blue-800 visited:text-purple-600" href="{{ .Paginator.Prev.URL }}"><i class="fas fa-chevron-circle-left"></i></a>
+	{{ end }}
+	{{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+	{{ if .Paginator.HasNext }}
+		   <a class="text-blue-600 underline hover:text-blue-800 visited:text-purple-600" href="{{ .Paginator.Next.URL }}"><i class="fas fa-chevron-circle-right"></i></a>
+	{{ end }}
+	</div>

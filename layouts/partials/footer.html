@@ -6,7 +6,7 @@
   <div class="w-full flex flex-row font-sans text-sm bg-gradient-to-r from-blue-500 to-purple-800 pa-0">
     <a class="float-left pt-4 pl-2"  href="{{ .Site.Params.video }}">
         <img class="w-12 h-12 transform hover:rotate-12" title="Vimeo video" alt="Agile man" src="{{  .Site.Params.logo | absURL }}"/></a>
-    
+
   <div class="flex-1 mt-1 md:mt-4 pt-4 pl-0 font-sans font-normal text-sm md:text-xl text-white hover:text-yellow-300">
     <a href="/contact">&copy; {{ now.Format "2006" }} {{ with .Site.Params.company }}{{ . }}{{ end }}</a>
   </div>
@@ -14,11 +14,15 @@
   <div class="mt-8">
     <a class="flex-1 pl-4 text-xs ml-8 text-white hover:text-yellow-300" href="../../cookie-policy">Cookie Policy</a>
     <a class="flex-1 pl-4 text-xs ml-8 text-white hover:text-yellow-300" href="../../privacy-policy">Privacy Policy</a>
-    
-    
+
+
   </div>
 
   <div class="flex-1 float-right pt-1 pr-4 md:pt-4">
+    {{ if .Site.Params.lunr }}
+    <a class="float-right pl-2" target="_blank" rel="noreferrer" href="https://lunrjs.com/">
+      <img class="w-6 mb-1 transform hover:scale-x-125 hover:scale-y-125" title="Search by Lunr" alt="Lunrjs logo" src="{{ "img/icon/lunrjs.svg" | absURL }}"/></a>
+    {{ end }}
     <a class="float-right pl-2 transform hover:scale-x-125 hover:scale-y-125 " target="_blank" rel="noreferrer" href="https://netlify.com/">
       <img class="w-6 mb-1" title="Devops as a Service by Netlify" alt="Netlify logo" src="{{ "img/icon/netlify.svg" | absURL }}"/></a>
     <a class="float-right pl-2 transform hover:scale-x-125 hover:scale-y-125" target="_blank" rel="noreferrer" href="https://tailwindcss.com/"><img class="" title="Custom theme in Tailwind CSS" alt="Tailwind css logo" src="{{ "img/icon/tailwindcss-icon.svg" | absURL }}" style="width: 1.5rem; height: 1.5rem" /></a>
@@ -27,7 +31,7 @@
   </div>
   <div class="bk-gray-700" style="color:black" id="cookie-consent"></div>
   </div>
-  
+
 </footer>
 </div>
 {{ template "_internal/google_analytics.html" . }}

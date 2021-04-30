@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="my-0 mx-0 md:mx-auto w-full w-148">
+<article class="z-10 w-full my-0 md:mx-auto md:w-148">
        <div class="relative  bg-white md:shadow-xl md:rounded -top-32 sm:-top-40 md:-top-20">
          <div class="md:rounded md:shadow-lg">
          <H3 class="pt-4 text-3xl font-medium text-center">{{ .Page.Title }}</H3>
@@ -19,7 +19,7 @@
          <hr>
          <div class="my-0 md:w-148">
          {{ if ne .Params.skip "true" }}
-
+            {{ partial "cta.html" . }}
          {{ end }}
         </div>
 </article>

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="">
+  <section class="">
+  {{ $pages := where .Paginator.Pages ".Params.skip" "ne" "true" }}
+    {{ range $pages }}
+      {{ partial "li.html" . }}
+    {{ end }}
+  </section>
+</div>
+{{ end }}
+
+{{ define "pagination" }}
+<footer class="" role="contentinfo">
+	<nav class="text-center" role="navigation">
+		{{- partial "pagination.html" . -}}
+	</nav>
+</footer>
+{{ end }}

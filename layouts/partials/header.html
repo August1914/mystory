@@ -4,20 +4,19 @@
 
 <style>
     .active{
-        display: block;
+      display: block;
     }
     .diagonal-box {
- 	position: relative;
+ 	    position: relative;
 }
-
-.hero-image__figure img {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-}</style>
-
+</style>
+{{ $h1 := .Site.Params.headerheight }}
+{{ $h2 := " z-0 mx-auto mb-10 " }}
+{{ $h := (print $h1 $h2) }}
 
 
-<header class="z-0 mx-auto mb-10 h-72 md:h-96 " style="background-image: url('{{ $webp }}'), url('{{ $jpg }}'); background-position: center; background-size: cover;">
+<header class="{{ $h }}" style="background-image: url('{{ $webp }}'), url('{{ $jpg }}'); background-position: center; background-size: cover;">
+
   <div id="topnav" class="p-5 mx-auto bg-blue-900 bg-opacity-70">
     <nav class="flex-row md:justify-between">
       <div class="float-left w-10 mr-5">
@@ -42,7 +41,6 @@
         </a>
       </div>
       {{ $titlestyle := print .Site.Params.titlecolor  "  ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide hover:text-yellow-600 font-title" }}
-
       <h1 style="text-shadow: 2px 2px 4px black;" class="{{ $titlestyle }}">{{ .Site.Title }}</h1>
       <h2  class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl hover:text-yellow-600">{{ .Site.Params.tagline }}</h2>
     </div>
