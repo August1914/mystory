@@ -1,18 +1,19 @@
-<div class="w-full overflow-hidden md:w-1/3 md:my-2 md:px-2">
-  {{ $img := .Params.thumbnail  }}
-  {{ $alt := .Title }}
-  {{ $caption := .Params.skill }}
+<article class="flex flex-row flex-wrap items-start mx-4 md:mx-20 lg:mx-40 xl:mx-60 2xl:mx-80" >
+	<a class="flex-none w-full p-2 mr-2 md:flex-1 md:min-w-1/5" href="{{ .Permalink }}"><div class="flex-none w-full p-2 mr-2 transform hover:scale-x-105 hover:scale-y-105 md:flex-1 md:min-w-1/5">
+		{{ partial "thumbnail.html" . }}
+	</div></a>
+	<div class="flex-none mx-auto bg-white md:flex-2 w-80 md:w-full">
+		<h2 class="hover:text-indigo-800 text-2xl text-center font-medium pb-0.5"><a href="{{ .Permalink }}" class="">
+			{{ (.Title | markdownify) }} </a></h1>
+		<h3  class="pb-1 font-normal text-center text-md ">{{ .Params.subtitle }}</h2>
+		<hr>
+		<div class="mx-6 space-y-2 font-serif font-normal ">
+				{{ .Summary }}
+		  <p class="p-4"><a class="p-2 font-sans text-xs text-blue-500 transform bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white" href="{{ .Permalink }}">Continue Reading <i class="fas fa-chevron-circle-right"></i></a></p>
+		</div>
+    <div>
 
-  <picture>
-   <source srcset="/img/webp/sm/{{ $img }}.webp 600w,
-                  /img/webp/{{ $img }}.webp" type="image/webp">
-   <source srcset="/img/jpg/sm/{{ $img }}.jpg 600w,
-                  /img/jpg/{{ $img }}.jpg" type="image/jpeg">
- <img class="w-3/5 mx-auto transform rounded-lg shadow-md hover:scale-125"
-   src="/img/jpg/{{ $img }}.jpg" alt="{{ $alt }}">
-   <div class="w=full mt-2 text-center uppercase font-sans text-normal rounded bg-white text-gray-800 position relative ">{{ $caption }}</div>
- </picture>
-  <div class="mt-0 text-sm font-normal text-center text-gray-600 uppercase">{{ .Title }}</div>
-  <div class="my-0 text-sm font-normal text-center text-gray-600 uppercase">{{ .Params.affiliation }}</div>
-  <p class="mx-4 mt-2 text-sm text-center text-gray-600">{{ .Summary }}</p>
-</div>
+    </div>
+	</div>
+</article>
+<hr class="pt-10">

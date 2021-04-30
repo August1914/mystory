@@ -2,7 +2,7 @@
 {{ define "main" }}
 <article class="z-10 w-full my-0 bg-white md:mx-auto md:w-148">
   <div class="relative bg-white md:shadow-xl md:rounded -top-32 sm:-top-40 md:-top-20">
-    <div class="bg-gray-700 md:rounded md:shadow-lg">
+    <div class="bg-blue-900 md:rounded md:shadow-lg">
     <H3 class="text-white font-sans pt-4 text-3xl font-medium text-center">{{ .Page.Title }}</H3>
     <H4  class="text-white font-sans font-normal text-center text-md">{{ .Params.subtitle }}</H4>
     <hr class="mt-4">
@@ -11,7 +11,22 @@
     <div class="mx-4 mt-0 prose prose-lg text-left md:mx-auto prose-indigo md:font-serif">
         <div>
            {{ .Content }}
+           <br>
         </div>
+        <p>
+        <div class="py-4 ml-0 text-center">
+        {{ if .NextPage }} <span class="p-4"><a class="p-2 font-sans text-xs text-blue-500 bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white" href="{{ .NextPage.Permalink }}"><i class="fas fa-chevron-circle-left"></i> {{ if .NextPage.Params.shorttitle }} {{ .NextPage.Params.shorttitle }} {{ else }} {{ .NextPage.Title }}{{ end }} </a></span>  {{ end }}
+
+        {{ if .PrevPage }}  <span class="p-4"><a class="p-2 font-sans text-xs text-blue-500 bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white" href="{{ .PrevPage.Permalink }}">{{ if .PrevPage.Params.shorttitle }} {{ .PrevPage.Params.shorttitle }} {{ else }} {{ .PrevPage.Title }}{{ end }} <i class="fas fa-chevron-circle-right"></i></a></span>  {{ end }}
+        </div>
+          </p>
+          <hr>
+          <div class="my-0 md:w-148">
+          {{ if ne .Params.skip "true" }}
+             {{ partial "cta.html" . }}
+          {{ end }}
+         </div>
+
     </div>
   </div>
 </article>
