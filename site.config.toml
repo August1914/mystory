@@ -13,6 +13,7 @@ theme = "mystory"
 
   org_alias = ""
   org_author = "Your Name"
+  org_author_thumbnail = "huntergodeck"
   org_company = "Your Company"
   org_logo = "/img/logo.svg"
   org_twitter = ""
