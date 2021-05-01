@@ -16,6 +16,7 @@
 
 
 <header class="{{ $h }}" style="background-image: url('{{ $webp }}'), url('{{ $jpg }}'); background-position: center; background-size: cover;">
+
   <div id="topnav" class="p-5 mx-auto bg-blue-900 bg-opacity-70">
     <nav class="flex-row md:justify-between">
       <div class="float-left w-10 mr-5">
@@ -34,15 +35,16 @@
       </p>
     </nav>
   </div>
+
     <div class="">
-      <div class="float-right w-96">
-        <a class="" href="{{ .Site.Params.hero_video }}"><img class="transform hover:scale-125 absolute h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
+      <div class="float-right w-40">
+        <a class="mr-20" href="{{ .Site.Params.hero_video }}"><img class="transform hover:scale-125  h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
         </a>
       </div>
-      {{ $titlestyle := print .Site.Params.hero_titlecolor  "  ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide hover:text-yellow-600 font-title" }}
+      {{ $titlestyle := print .Site.Params.hero_titlecolor  " ml-8 md:ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide hover:text-yellow-600 font-title" }}
       <h1 style="text-shadow: 2px 2px 4px black;" class="{{ $titlestyle }}">{{ .Site.Title }}</h1>
-      <h2 style="text-shadow: 1px 1px 2px black;" class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl hover:text-yellow-600">{{ .Site.Params.hero_tagline }}</h2>
-    </div>
+      <h2 style="text-shadow: 1px 1px 2px black;" class="ml-8 md:ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl hover:text-yellow-600">{{ .Site.Params.hero_tagline }}</h2>
+   </div>
 </header>
 
 <script>
