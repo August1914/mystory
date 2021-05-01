@@ -23,6 +23,7 @@ theme = "mystory"
   toggle_gtag = false
   toggle_lunr = false
   toggle_vue = false
+  toggle_readmore = true
 
 [[menu.social]]
 
