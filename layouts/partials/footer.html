@@ -5,10 +5,10 @@
   <link defer rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <div class="w-full flex flex-row font-sans text-sm bg-gradient-to-r from-blue-500 to-purple-800 pa-0">
     <a class="float-left pt-4 pl-2"  href="{{ .Site.Params.video }}">
-        <img class="w-12 h-12 transform hover:rotate-12" title="Vimeo video" alt="Agile man" src="{{  .Site.Params.logo | absURL }}"/></a>
+        <img class="w-12 h-12 transform hover:rotate-12" title="Vimeo video" alt="Agile man" src="{{  .Site.Params.org_logo | absURL }}"/></a>
 
-  <div class="flex-1 mt-1 md:mt-4 pt-4 pl-0 font-sans font-normal text-sm md:text-xl text-white hover:text-yellow-300">
-    <a href="/contact">&copy; {{ now.Format "2006" }} {{ with .Site.Params.company }}{{ . }}{{ end }}</a>
+  <div class="flex-1 mt-1 md:mt-4 pt-4 pl-0 font-sans font-normal text-xs md:text-sm text-white hover:text-yellow-300">
+    <a href="/contact">&copy; {{ now.Format "2006" }} {{ with .Site.Params.org_company }}{{ . }}{{ end }}</a>
   </div>
 
   <div class="mt-8">
@@ -19,7 +19,7 @@
   </div>
 
   <div class="flex-1 float-right pt-1 pr-4 md:pt-4">
-    {{ if .Site.Params.lunr }}
+    {{ if .Site.Params.toggle_lunr }}
     <a class="float-right pl-2" target="_blank" rel="noreferrer" href="https://lunrjs.com/">
       <img class="w-6 mb-1 transform hover:scale-x-125 hover:scale-y-125" title="Search by Lunr" alt="Lunrjs logo" src="{{ "img/icon/lunrjs.svg" | absURL }}"/></a>
     {{ end }}

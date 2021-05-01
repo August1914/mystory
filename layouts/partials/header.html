@@ -1,6 +1,6 @@
 
-{{ $webp := absURL (print "/img/webp/" .Site.Params.banner ".webp") }}
-{{ $jpg := absURL (print "/img/jpg/" .Site.Params.banner ".jpg")  }}
+{{ $webp := absURL (print "/img/webp/" .Site.Params.hero_img ".webp") }}
+{{ $jpg := absURL (print "/img/jpg/" .Site.Params.hero_img ".jpg")  }}
 
 <style>
     .active{
@@ -10,7 +10,7 @@
  	    position: relative;
 }
 </style>
-{{ $h1 := .Site.Params.headerheight }}
+{{ $h1 := .Site.Params.hero_height }}
 {{ $h2 := " z-0 mx-auto mb-10 " }}
 {{ $h := (print $h1 $h2) }}
 
@@ -19,7 +19,7 @@
   <div id="topnav" class="p-5 mx-auto bg-blue-900 bg-opacity-70">
     <nav class="flex-row md:justify-between">
       <div class="float-left w-10 mr-5">
-      <a class="" href="/"><img class="transform hover:rotate-12" src="{{ "/img/logo.svg" | absURL }}" alt="{{ .Site.Title }}" /></a>
+      <a class="" href="/"><img class="transform hover:rotate-12" src="{{ .Site.Params.org_logo | absURL }}" alt="{{ .Site.Title }}" /></a>
       </div>
       <ul class="hidden md:flex md:flex-row" id="mobileMenu">
         {{- range .Site.Menus.main }}
@@ -36,12 +36,12 @@
   </div>
     <div class="">
       <div class="float-right w-96">
-        <a class="" href="{{ .Site.Params.video }}"><img class="transform hover:scale-125 absolute h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
+        <a class="" href="{{ .Site.Params.hero_video }}"><img class="transform hover:scale-125 absolute h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
         </a>
       </div>
-      {{ $titlestyle := print .Site.Params.titlecolor  "  ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide hover:text-yellow-600 font-title" }}
+      {{ $titlestyle := print .Site.Params.hero_titlecolor  "  ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide hover:text-yellow-600 font-title" }}
       <h1 style="text-shadow: 2px 2px 4px black;" class="{{ $titlestyle }}">{{ .Site.Title }}</h1>
-      <h2 style="text-shadow: 1px 1px 2px black;" class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl hover:text-yellow-600">{{ .Site.Params.tagline }}</h2>
+      <h2 style="text-shadow: 1px 1px 2px black;" class="ml-20 mt-2 font-sans font-semibold tracking-normal  text-yellow-400 text-1xl md:text-3xl hover:text-yellow-600">{{ .Site.Params.hero_tagline }}</h2>
     </div>
 </header>
 

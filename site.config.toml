@@ -1,20 +1,29 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Yes, you can!"
+title = "One World, One People!"
 theme = "mystory"
 
 [params]
-  author = "Yours truely"
-  company = "Acme Widgets"
-  subtitle = "The coyote looses, every time."
-  tagline = "When one teaches, two learn"
-  titlecolor = "text-white"
-  titleflyover = "text-yellow-600"
-  banner = "sergey-pesterev-JV78PVf3gGI-unsplash"
-  logo = "/img/logo.svg"
-  video = "https://www.youtube.com/watch?v=HRK0GECpQbA"
-  contact = "Contact Us"
-  vue = false
+  hero_img = "sergey-pesterev-JV78PVf3gGI-unsplash"
+  hero_height = "h-60 md:h-72"
+  hero_titlecolor = "text-yellow-400"
+  hero_titleflyover = "text-yellow-600"
+  hero_tagline = "Get the most from your processes now!"
+  hero_video = "https://www.youtube.com/watch?v=HRK0GECpQbA"
+
+  org_alias = ""
+  org_author = "Your Name"
+  org_company = "Your Company"
+  org_logo = "/img/logo.svg"
+  org_twitter = ""
+  org_ga_measurement_id = ""
+
+  toggle_debug = false
+  toggle_gtag = false
+  toggle_lunr = false
+  toggle_vue = false
+
+[[menu.social]]
 
 [taxonomies]
   tag = "tags"
@@ -24,13 +33,13 @@ theme = "mystory"
 [[menu.social]]
   name = "Twitter"
   title = "fab fa-twitter-square"
-  url = "https://twitter.com/curtisguilbot/"
+  url = "https://twitter.com/"
   weight = 6
 
 [[menu.social]]
   name = "Linkedin"
   title = "fab fa-linkedin"
-  url = "https://linkedin.com/in/curtiswayneguilbot/"
+  url = "https://linkedin.com/in/"
   weight = 4
 
 [[menu.main]]

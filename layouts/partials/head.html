@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/css/main.css">
 <link defer href="https://fonts.googleapis.com/css?family=Anton|Quattrocento+Sans:400,400i,700,700i|Quattrocento:400,700|Spectral:400,400i,700,700i&amp;subset=latin-ext&display=swap" rel="stylesheet">
 <script type="text/javascript" src="{{ "js/cookie-consent.js" | absURL }}"></script>
-{{ if .Site.Params.vue }}
+{{ if .Site.Params.toggle_vue }}
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuex"></script>
 {{ end }}
@@ -26,8 +26,10 @@
 <!-- Tailwind -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js">
 </script>
+
+{{ if .Site.Params.toggle_gtag }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.ga_measurement_id }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.org_ga_measurement_id }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,6 +37,8 @@
 
   gtag('config', '{{ .Site.Params.ga_measurement_id }}');
 </script>
+{{ end }}
+
 <script>
   window.onload = function(){
     if(checkCookie(window.cookieName) != window.cookieValue){

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="{{ .Language.Lang }}">
 <head>
     {{ partial "head.html" . }}
 </head>
-<body class="debug-screens">
+<body {{ if .Site.Params.toggle_debug }} class="debug-screens" {{ end }}>
    {{ partial "header.html" . }}
    <div class="content container mx-auto">
      {{ block "main" . }}{{ end }}
