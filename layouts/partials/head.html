@@ -26,18 +26,16 @@
 <!-- Tailwind -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js">
 </script>
-
-{{ if .Site.Params.toggle_gtag }}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.org_ga_measurement_id }}"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  gtag('config', '{{ .Site.Params.ga_measurement_id }}');
+  ga('create', {{ .Site.Params.GoogleAnalytics }}, 'auto');
+  ga('send', 'pageview');
+
 </script>
-{{ end }}
 
 <script>
   window.onload = function(){
