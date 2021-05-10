@@ -1,7 +1,8 @@
 {{ define "main" }}
 <div class="">
   <section class="">
-  {{ range (.Paginate ( first 50 .Pages.ByTitle )).Pages }}
+  {{ $pages := where .Paginator.Pages ".Params.skip" "ne" "true" }}
+    {{ range $pages }}
       {{ partial "li.html" . }}
     {{ end }}
   </section>
