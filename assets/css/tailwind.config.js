@@ -1,10 +1,12 @@
 const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: {
     enabled: true,
     layers: ["components", "utilities"],
     content: ['./themes/**/*.html','./themes/**/*.js'],
   },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       title: ['Anton'],
@@ -67,8 +69,9 @@ module.exports = {
         88: '22rem',
       },
     },
+  },  variants: {
+    extend: {},
   },
-  variants: {},
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
