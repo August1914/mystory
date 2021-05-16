@@ -1,6 +1,11 @@
 {{ $title := default "Footnotes" (.Get "title") }}
+{{ $divline := (.Get "divline") }}
 
+{{ if $divline }}
+{{ partial $divline }}
+{{ else }}
 <hr>
+{{ end }}
 <div class="font-sans text-normal" >
 {{ $title }}
 </div>

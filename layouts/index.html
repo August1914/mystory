@@ -15,8 +15,7 @@
 
             {{ if .PrevPage }}  <span class="p-4"><a class="p-2 font-sans text-xs text-blue-500 bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white" href="{{ .PrevPage.Permalink }}">{{ if .PrevPage.Params.shorttitle }} {{ .PrevPage.Params.shorttitle }} {{ else }} {{ .PrevPage.Title }}{{ end }} <i class="fas fa-chevron-circle-right"></i></a></span>  {{ end }}
        </div>
-         </p>
-         <hr>
+        </p>
          <div class="my-0 md:w-148">
          {{ if ne .Params.skip "true" }}
             {{ partial "cta.html" . }}
