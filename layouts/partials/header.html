@@ -5,7 +5,8 @@
 {{ $h1 := .Site.Params.hero_height }}
 {{ $h2 := " z-0 mx-auto mb-10 " }}
 {{ $h := (print $h1 $h2) }}
-
+{{ $twtitle := print .Site.Params.hero_titlecolor  " z-100 ml-8 md:ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide font-title " .Site.Params.hero_titleflyover }}
+{{ $twtagline := print .Site.Params.hero_taglinecolor  " ml-8 md:ml-20 mt-2 font-sans font-semibold tracking-normal text-1xl md:text-3xl " .Site.Params.hero_taglineflyover }}
 
 <header class="{{ $h }}" style="background-image: url('{{ $webp }}'), url('{{ $jpg }}'); background-position: center; background-size: cover;">
 
@@ -27,17 +28,19 @@
       </p>
     </nav>
   </div>
+  <div>
+  <div class="float-right w-32 md:w-96 ">
+    <a class="mr-20" href="{{ .Site.Params.hero_video }}"><img class="transform hover:scale-125  h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
+    </a>
+  </div>
 
-    <div class="">
-      <div class="float-right w-40">
-        <a class="mr-20" href="{{ .Site.Params.hero_video }}"><img class="transform hover:scale-125  h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
-        </a>
-      </div>
-      {{ $titlestyle := print .Site.Params.hero_titlecolor  " ml-8 md:ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide font-title hover:" .Site.Params.hero_titleflyover }}
-      <h1 style="text-shadow: 2px 2px 4px black;" class="{{ $titlestyle }}">{{ .Site.Title }}{{ if .Site.Params.toggle_trademark }}<sup class="tm relative text-xs">TM</sup>{{ end }}</h1>
-      {{ $taglinestyle := print .Site.Params.hero_taglinecolor  " ml-8 md:ml-20 mt-2 font-sans font-semibold tracking-normal text-1xl md:text-3xl hover:" .Site.Params.hero_taglineflyover }}
-      <h2 style="text-shadow: 1px 1px 2px black;" class="{{ $taglinestyle }}">{{ .Site.Params.hero_tagline }}</h2>
-   </div>
+  <h1 style="text-shadow: 2px 2px 4px black;" class="{{ $twtitle }}">{{ .Site.Title }}
+    {{ if .Site.Params.toggle_trademark }}<span class="tm relative text-xs">TM</span>{{ end }}
+  </h1>
+
+  <h2 style="text-shadow: 1px 1px 2px black;" class="{{ $twtagline }}">{{ .Site.Params.hero_tagline }}
+  </h2>
+  </div>
 </header>
 
 <script>

@@ -24,6 +24,7 @@
 
 .tm {
    top: -4em;
+   left: -1.5em;
  }
  @media screen and (max-width: 760px) {
      .tm {
@@ -34,6 +35,9 @@
 @media screen and (max-width: 480px) {
     .tm {
     top: -2em;
+    margin-left: 1em;
     font-size: xx-small;
     }
   }
+
+  h1.hover { color: #d77720; }
