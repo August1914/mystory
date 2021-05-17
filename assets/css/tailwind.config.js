@@ -17,7 +17,21 @@ module.exports = {
       center: true,
       padding: "1.5rem",
     },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
 
+      black: colors.black,
+      white: colors.white,
+      gray: colors.coolGray,
+      red: colors.red,
+      yellow: colors.amber,
+      green: colors.emerald,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.violet,
+      pink: colors.pink,
+    },
     backgroundOpacity: {
      10: '0.1',
      20: '0.2',

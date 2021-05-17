@@ -3,15 +3,15 @@
 		{{ partial "thumbnail.html" . }}
 	</div></a>
 	<div class="flex-none mx-auto bg-white md:flex-2 w-80 md:w-full">
-		<h2 class="hover:text-indigo-800 text-2xl text-center font-medium pb-0.5"><a href="{{ .Permalink }}" class="">
+		<h2 class=" text-indigo-800 hover:text-blue-600 text-2xl text-center font-medium pb-0.5"><a href="{{ .Permalink }}" class="">
 			{{ (.Title | markdownify) }} </a>
 		</h2>
-		<h3  class="pb-1 font-normal text-center text-md ">{{ .Params.subtitle }}</h3>
+		<h3  class="pb-1 font-normal text-center text-md text-indigo-800 hover:text-blue-600 ">{{ .Params.subtitle }}</h3>
 		<hr>
 		<div class="mx-6 space-y-2 font-serif font-normal ">
 				{{ .Summary }}
 			{{ if .Site.Params.toggle_readmore }}
-		  <p class="p-4"><a class="p-2 font-sans text-xs text-blue-500 transform bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white" href="{{ .Permalink }}">Continue Reading <i class="fas fa-chevron-circle-right"></i></a>
+		  <p class="p-4"><a class="p-2 font-sans text-xs text-indigo-800 transform bg-transparent border text-indigo-800 rounded-lg ring-2 hover:bg-blue-500 hover:text-white" href="{{ .Permalink }}">Continue Reading <i class="fas fa-chevron-circle-right"></i></a>
 			</p>
 			{{ end }}
 		</div>
