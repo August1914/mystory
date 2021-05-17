@@ -2,9 +2,9 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: {
-    enabled: true,
+    enabled: false,
     layers: ["components", "utilities"],
-    content: ['./themes/**/*.html','./themes/**/*.js'],
+    content: [,'./layouts/**/*.html','./**/*.js','./themes/**/*.html'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
