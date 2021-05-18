@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     enabled: false,
     layers: ["components", "utilities"],
-    content: [,'./layouts/**/*.html','./**/*.js','./themes/**/*.html'],
+    content: ['./layouts/**/*.html','./themes/**/*.html','./**/*.js'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
