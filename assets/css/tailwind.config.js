@@ -5,6 +5,7 @@ module.exports = {
     enabled: true,
     layers: ["components", "utilities"],
     content: ['./layouts/**/*.html','./themes/**/*.html','./**/*.js'],
+    safelist: ['hover:text-yellow-600'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
