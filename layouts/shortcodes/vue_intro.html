@@ -1,14 +1,13 @@
-<h2>Vue Meets Hugo</h2>
+<h2>Mounting a Vue3 app in Hugo</h2>
 <div id="vapp">
   <p>Hello World: [[ display ]]</p>
 </div>
 
 <script>
-const vueApp = new Vue({
+var vueApp = Vue.createApp({
+  data() {return {display: 'Salut Lume'}},
   delimiters: ['[[', ']]'],
-  el: '#vapp',
-  data: {
-   display: 'this is the value of a vue variable'
-  }
-})
+}).mount('#vapp');
+
+
 </script>
