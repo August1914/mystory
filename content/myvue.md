@@ -26,7 +26,7 @@ In the text above ^^, the Hugo template published a Vue variable, which is then 
 We need a way to put the Vue variable _[[ display ]]_ in the context of the targeted div: _vapp_. We could do this in a template partial, but using a Hugo shortcode affords us the opportunity to incorporate reactive elements in regular markdown files, as is the case here.
 
 
-This is demonstration of a simple HTML inline variable, and you can get a lot done with just that.  You can write something more complex with components cast in backticks.  To build something complex in Vue3, you'd want to write Vue Single File Templates, which need to be compiled to Javascript, and that introduces then need for some pre-processing services with Webpack or similar bundler.  Hugo can be setup to compile and bundle Vue3 SFTs as well.  Hugo serves as a powerful template compilation system on which Vue applications can be mounted.
+This is demonstration of a simple HTML inline variable, and you can get a lot done with just that.  You can write something more complex with string templates, where vue templates are cast in backticks.  To build something complex in Vue3, you'd want to write Vue Single File Templates, which need to be compiled to Javascript, and that introduces then need for some pre-processing services with Webpack or similar bundler.  Hugo can be setup to compile and bundle Vue3 SFTs as well.  Hugo serves as a powerful template compilation system on which Vue applications can be mounted.
 
 {{< separator1 >}}  
 
