@@ -44,9 +44,10 @@ const vueApp = new Vue({
 
 {{< separator1 >}}  
 
-The example above has the Vue app mounted on a DOM element with the classname `vapp`. We can define our mount point the form of a Hugo shortcode: an HTML fragment which is inserted in to a markdown file.
+The example above has the Vue app mounted on a DOM element with the classname `vapp`. We can define your mount point in a template partial, or, you can define the mount point as we have here the form of a Hugo shortcode: an HTML fragment which is inserted in to a markdown file:
 
 ```
+<!-- shortcodes/vue_vapp.html-->
 <div id="vapp">
   <p>Hello World: [[ display ]]</p>
 </div>
@@ -56,19 +57,19 @@ This next line is actually the above shortcode inserted in this markdown file:
 
 {{< vue_intro >}}
 
-In the text above ^^,  Vue variable inserted into the template, so that it is available to be targeted by Vue at runtime, replacing the variable with the value “Salut Lume”, Romanian for “Hello World”.  I don't speak Romanian, but I have some friends that do.
+In the text above ^^,  Vue variable inserted into the template, so that it is available to be targeted by Vue at runtime, replacing the variable with the value “Salut Lume”, Romanian for “Hello World”.  (I don't speak Romanian, but I have some friends that do.)
 
-This is demonstration of a simple HTML inline Vue variable. You can get a lot done with just that very simple approach to reactivity in Hugo.  You don't need webpack use inline Vue variables in Hugo, just pull the runtime from a CDN someplace appropriate, such as `header.html:`
+This is a demonstration of a simple HTML inline Vue variable.  If you can do one, you can place ten. You can get a lot done with just that very simple approach to reactivity in Hugo.  You don't need webpack to implement inline Vue variables, just pull the runtime from a CDN someplace appropriate, such as `header.html:`
 
 ```
   <script src="https://unpkg.com/vue@v3.1.1"></script>
 ```
 
-You can get a bit more sophisticated than inline variables using Vue string templates.
+You can get a bit more sophisticated using Vue string templates.
 
-To build groups of components that interact with API and manage state, you might want to implement the Composition API. SFTs need to be compiled to Javascript, and that introduces then need for some pre-processing services with Webpack or similar bundler.  
+To build groups of components that interact with one another and manage state, you'll probably want to implement Vue's Composition API in Single File Templates. SFTs need to be compiled to Javascript, and that introduces then need for some pre-processing services with Webpack or similar bundler.  
 
-The whole ecosystem is a moving target, so please don't quote me on it, but this go us in the game with SFTs in Hugo:
+Hugo can be setup to compile and bundle Vue3 SFTs as well. The whole ecosystem is a moving target, so please don't quote me on it, but this webpack.config allowed us to compile SFTs, to generate a bundle that could be mounted as a Vue app in a Hugo site:
 
 ```
 const path = require('path');
@@ -122,19 +123,21 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
 };
-```
+```  
 
-Hugo can be setup to compile and bundle Vue3 SFTs as well.  
+Hugo serves as a powerful template compilation system on which Vue applications can be mounted.  Everything that Hugo does happens before the DOM is created.  Vue's job doesn't start until after the DOM is created at runtime.   It makes for an interesting division of labor.
 
-Hugo serves as a powerful template compilation system on which Vue applications can be mounted.  Everything that Hugo does happens before the DOM is created.  Vue's job doesn't start until after the DOM is created at runtime.   It makes for an interesting devision of labor.
-
-{{< form "Vue meets Hugo" >}}
+{{< form "Vue in Hugo" >}}
 
 I'm not making the case that you should use Vue in Hugo, I'm just demonstrating that there are no technical obstacles to going down that path. At the least, we gain a better understanding of the problems that various build frameworks are seeking to solve.
 
 {{< footnotes title="Bibliography">}}
 
 {{< biblio title="Vue Composition API" author="Cristian Salcescu" >}}
+{{< biblio title="JavaScript" subtitle="The Definitive Guide" author="David Flanagan" >}}
+{{< extlink anchor="https://v3.vuejs.org/" title="Vue Documentation" >}}
+{{< extlink anchor="https://webpack.js.org/" title="Webpack Documentation" >}}
+
 
 
 
