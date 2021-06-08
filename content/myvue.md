@@ -1,7 +1,7 @@
 +++
 title = "Vue In Hugo"
 subtitle = "Mounting a Vue app on Hugo Page"
-url = "/vue"
+url = "/how-to/vue-in-hugo"
 description = "Vue Spike"
 tags = [""]
 icon = ""
