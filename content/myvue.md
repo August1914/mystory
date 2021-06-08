@@ -1,6 +1,6 @@
 +++
-title = "Vue Meets Hugo"
-subtitle = "Great vue from here!"
+title = "Vue In Hugo"
+subtitle = "Mounting a Vue app on Hugo Page"
 url = "/vue"
 description = "Vue Spike"
 tags = [""]
@@ -10,27 +10,10 @@ weight = 998
 layout = "single"
 +++
 
-This is a simple demonstration that Vue can be used to run DOM manipulations in Hugo generated static sites.  It works.  
-
-{{< vue_intro >}}
-
-In the text above ^^, the Hugo template published a Vue variable, which is then targeted by Vue at runtime, replacing the variable with the value “Salut Lume”, Romanian for “Hello World”.  (I don't speak Romanian, but I have some friends that do.)  
-
-```
-<h2>Mounting a Vue3 app in Hugo</h2>
-<div id="vapp">
-  <p>Hello World: [[ display ]]</p>
-</div>
-```
-
-We need a way to put the Vue variable _[[ display ]]_ in the context of the targeted div: _vapp_. We could do this in a template partial, but using a Hugo shortcode affords us the opportunity to incorporate reactive elements in regular markdown files, as is the case here.
+This is a simple demonstration that Vue can be used to run DOM manipulations in Hugo generated static sites.  It works.
 
 
-This is demonstration of a simple HTML inline variable, and you can get a lot done with just that.  You can write something more complex with string templates, where vue templates are cast in backticks.  To build something complex in Vue3, you'd want to write Vue Single File Templates, which need to be compiled to Javascript, and that introduces then need for some pre-processing services with Webpack or similar bundler.  Hugo can be setup to compile and bundle Vue3 SFTs as well.  Hugo serves as a powerful template compilation system on which Vue applications can be mounted.
-
-{{< separator1 >}}  
-
-About Vue delimiters: Double brackets: `{{ }}` are used to designate template variables in both Hugo's mustache style templating language as well as that of Vue.
+First, let's sort out how resolve the conflict of Vue delimiters with Hugo's mustache template syntax. Double curly-brackets `{{ }}` are used to designate template variables in both Hugo's mustache style templating language as well as that of Vue.
 
 Fortunately, Vue provides a simple delimiter configuration option that we can use to make sure Vue variables are ignored by Hugo, while being recognized by Vue.
 
@@ -59,10 +42,91 @@ const vueApp = new Vue({
 })
 ```
 
+{{< separator1 >}}  
 
+The example above has the Vue app mounted on a DOM element with the classname `vapp`. We can define our mount point the form of a Hugo shortcode: an HTML fragment which is inserted in to a markdown file.
 
+```
+<div id="vapp">
+  <p>Hello World: [[ display ]]</p>
+</div>
+```
 
+This next line is actually the above shortcode inserted in this markdown file:
 
+{{< vue_intro >}}
+
+In the text above ^^,  Vue variable inserted into the template, so that it is available to be targeted by Vue at runtime, replacing the variable with the value “Salut Lume”, Romanian for “Hello World”.  I don't speak Romanian, but I have some friends that do.
+
+This is demonstration of a simple HTML inline Vue variable. You can get a lot done with just that very simple approach to reactivity in Hugo.  You don't need webpack use inline Vue variables in Hugo, just pull the runtime from a CDN someplace appropriate, such as `header.html:`
+
+```
+  <script src="https://unpkg.com/vue@v3.1.1"></script>
+```
+
+You can get a bit more sophisticated than inline variables using Vue string templates.
+
+To build groups of components that interact with API and manage state, you might want to implement the Composition API. SFTs need to be compiled to Javascript, and that introduces then need for some pre-processing services with Webpack or similar bundler.  
+
+The whole ecosystem is a moving target, so please don't quote me on it, but this go us in the game with SFTs in Hugo:
+
+```
+const path = require('path');
+var webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const {VueLoaderPlugin} = require("vue-loader");
+
+module.exports = {
+  entry: [
+    path.resolve('src', 'js', 'app.js'),
+    path.resolve('src', 'styles', 'app.css'),
+  ],
+  output: {
+    path: path.resolve('static', 'assets'),
+    filename: 'bundle.js',
+  },
+  devtool: 'inline-source-map',
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.esm-bundler.js'
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      },
+      {
+        test: /\.json5$/i,
+        loader: 'json5-loader',
+        type: 'javascript/auto',
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new VueLoaderPlugin(),
+  ],
+};
+```
+
+Hugo can be setup to compile and bundle Vue3 SFTs as well.  
+
+Hugo serves as a powerful template compilation system on which Vue applications can be mounted.  Everything that Hugo does happens before the DOM is created.  Vue's job doesn't start until after the DOM is created at runtime.   It makes for an interesting devision of labor.
 
 {{< form "Vue meets Hugo" >}}
 
