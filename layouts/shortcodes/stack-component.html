@@ -27,7 +27,7 @@
 
 
 </style>
-<div class="mx-auto w-full md:w-96 my-6" >
+<div class="mx-auto w-full md:w-4/5 my-6" >
   <a href="{{ $url }}">
   <picture>
   <img class="float-left transform rounded-full hover:rotate-6 curve" src="{{ $img }}" alt="{{ $name }}" style="float: left; border-radius: 50px;">
@@ -36,7 +36,7 @@
   <h3 class="font-sans text-lg">{{ $name }}</h3>
   <p class="font-sans text-base font-semibold">{{ $tagline }}</p>
   {{ if $link }} <a href="{{ $link }}"> {{ $linkname }} </a> {{ end }}
-  <p class="prose">{{ $text }}</p>
+  <p class="prose prose-lg text-left prose-indigo">{{ $text }}</p>
 
   <div class="h-4"></div>
 </div>
