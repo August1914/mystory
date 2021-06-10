@@ -49,7 +49,6 @@
 			 $.getJSON("{{ "index.json" | absURL }}")
             .done(function(index) {
                 pagesIndex = index;
-                // console.log("index:", pagesIndex);
                 lunrIndex = lunr(function() {
                     this.field("title", { boost: 10 });
                     this.field("categories", { boost: 5 });
@@ -121,12 +120,10 @@
       icons.set('Estimation','/img/icon/icon_dice.svg');
       icons.set('Talks','/img/icon/icon_speaker.svg');
       icons.set('Bibliography','/img/icon/icon_books.svg');
-      //console.log(icons);
       for (var key of keys) {
 
         f = filterResults(results, key);
         if (f.length > 0) {
-            //console.log(key + f.length);
             addCategoryHeader(key, icons);
             f.slice(0, 500).forEach(function(result) {
             var $result = $('<div class="my-0 ml-4 prose text-indigo-600 underline list-none transform prose-indigo hover:text-indigo-900 visited:text-purple-600">');
@@ -157,7 +154,6 @@
     function filterResults(results, key) {
     let filteredResult = [];
     results.slice(0, 50).forEach(function(result) {
-        console.log('result',result);
         if (result.content.includes(key) ) {
         filteredResult.push(result);
         }
