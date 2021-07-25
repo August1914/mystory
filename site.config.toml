@@ -13,14 +13,13 @@ theme = "mystory"
 
   org_alias = ""
   org_author = "Your Name"
-  org_author_thumbnail = "huntergodeck"
+  org_author_thumbnail = ""
   org_company = "Your Company"
   org_logo = "/img/logo.svg"
   org_twitter = ""
-  org_ga_measurement_id = ""
+  fathom_site_code = ""
 
   toggle_debug = false
-  toggle_gtag = false
   toggle_lunr = false
   toggle_vue = false
   toggle_readmore = true
