@@ -1,7 +1,7 @@
 +++
 title = "Vue In Hugo"
 subtitle = "Mounting a Vue app on Hugo Page"
-url = "/vue"
+url = "/how-to/vue-in-hugo"
 description = "Vue Spike"
 tags = [""]
 icon = ""
@@ -44,7 +44,7 @@ const vueApp = new Vue({
 
 {{< separator1 >}}  
 
-The example above has the Vue app mounted on a DOM element with the classname `vapp`. We can define your mount point in a template partial, or, you can define the mount point as we have here the form of a Hugo shortcode: an HTML fragment which is inserted in to a markdown file:
+The example above has the Vue app mounted on a DOM element with the classname `vapp`. You can define your mount point in a template partial, or, you can define the mount point as we have here in the form of a Hugo shortcode: an HTML fragment which is inserted in to a markdown file:
 
 ```
 <!-- shortcodes/vue_vapp.html-->
