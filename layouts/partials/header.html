@@ -5,8 +5,8 @@
 {{ $h1 := .Site.Params.hero_height }}
 {{ $h2 := " mx-auto mb-10 " }}
 {{ $h := (print $h1 $h2) }}
-{{ $twtitle := print .Site.Params.hero_titlecolor  " ml-8 md:ml-20 mt-12 max-w-7xl text-3xl md:text-7xl font-semibold tracking-wide font-title " .Site.Params.hero_titleflyover }}
-{{ $twtagline := print .Site.Params.hero_taglinecolor  " ml-8 md:ml-20 mt-2 font-sans font-semibold tracking-normal text-1xl md:text-3xl " .Site.Params.hero_taglineflyover }}
+{{ $twtitle := print .Site.Params.hero_titlecolor  " ml-8 md:ml-20 mt-12 max-w-7xl text-3xl sm:text-6xl lg:text-7:xl font-semibold tracking-wide font-title " .Site.Params.hero_titleflyover }}
+{{ $twtagline := print .Site.Params.hero_taglinecolor  " ml-8 md:ml-20 mt-2 font-sans font-semibold tracking-normal text-base sm:text-txl md:text-3xl " .Site.Params.hero_taglineflyover }}
 
 <header class="{{ $h }}" style="background-image: url('{{ $webp }}'), url('{{ $jpg }}'); background-position: center; background-size: cover;">
 
@@ -29,7 +29,7 @@
     </nav>
   </div>
   <div>
-  <div class="float-right w-32 md:w-96 ">
+  <div class="float-right w-32 md:w-96 h-8 ">
     <a class="mr-20" href="{{ .Site.Params.hero_video }}"><img class="transform hover:scale-125  h-12 md:h-32 w-12 md:w-32" src="{{ "/img/icon/video_play.svg" | absURL }}" alt="{{ .Site.Title }}" />
     </a>
   </div>
