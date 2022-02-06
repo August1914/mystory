@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/August1914/mystory/blob/master/LICENSE"
 description = ""
 homepage = "http://michaelgodeck.com/"
-tags = []
+tags = ["zoom"]
 features = []
 min_version = "0.41.0"
 
