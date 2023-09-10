@@ -1,0 +1,8 @@
+{{ $caption := ( .Get "caption" ) }}
+{{ $link := ( .Get "link" ) }}
+
+<p>
+  <div class="py-4 ml-0 text-center">
+    <button class="mb-2 transform hover:rotate-6"><a style="text-decoration:none;" class="inline-block py-2 w-40 no-underline font-sans text-xs text-blue-500 bg-transparent border border-blue-500 rounded-lg ring-1 hover:bg-blue-500 hover:text-white " href="{{ $link }}"></i><span>  </span>{{ $caption }}</a></button>
+  </div>
+</p>
