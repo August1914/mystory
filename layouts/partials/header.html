@@ -60,7 +60,7 @@ hamburger.addEventListener('click', function(){
     collection.forEach((ele, ind) => {
     let elePath = ele.pathname;
     let firstPath = locationPath.split('/');
-    let secondPath = '/chapters/' + firstPath[1] + '/';
+    let secondPath = 'titles/' + firstPath[1] + '/';
     if (( elePath == locationPath ) ||
         ( elePath ==  secondPath ) ||
        ( elePath.includes('talks') && locationPath.includes('talks'))
